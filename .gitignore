@@ -1,2 +1,13 @@
 node_modules
 .next
+out
+.vercel
+*.tsbuildinfo
+
+# env files (commit .env.example only)
+.env*
+!.env.example
+
+# supabase local state
+supabase/.branches
+supabase/.temp

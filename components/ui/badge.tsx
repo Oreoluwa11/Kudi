@@ -1,33 +1,26 @@
-import * as React from "react";
 import { cn } from "@/lib/utils";
 
-// Since I don't have cva installed, I will write it simply with cn and manual classes.
-// Or I can install class-variance-authority.
-// Just sticking to simple implementation for speed.
+const tones = {
+  neutral: "bg-surface-2 text-ink-2",
+  brand: "bg-brand-soft text-brand-soft-ink",
+  good: "bg-good-soft text-good",
+  warn: "bg-warn-soft text-warn",
+  critical: "bg-critical-soft text-critical",
+};
 
-interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
-  variant?: "default" | "secondary" | "destructive" | "outline";
-}
-
-function Badge({ className, variant = "default", ...props }: BadgeProps) {
+export function Badge({
+  tone = "neutral",
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLSpanElement> & { tone?: keyof typeof tones }) {
   return (
-    <div
+    <span
       className={cn(
-        "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
-        {
-          "border-transparent bg-indigo-600 text-white hover:bg-indigo-600/80":
-            variant === "default",
-          "border-transparent bg-zinc-800 text-zinc-100 hover:bg-zinc-800/80":
-            variant === "secondary",
-          "border-transparent bg-rose-600 text-white hover:bg-rose-600/80":
-            variant === "destructive",
-          "text-zinc-100": variant === "outline",
-        },
-        className
+        "inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[12px] font-medium whitespace-nowrap [&_svg]:size-3",
+        tones[tone],
+        className,
       )}
       {...props}
     />
   );
 }
-
-export { Badge };
