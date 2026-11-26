@@ -2,7 +2,7 @@
 
 **Give every naira a job.** Kudi is a monthly budgeting app. Record your income, split it across categories, log spending as it happens, and get a warning *before* a category runs over, not after.
 
-Live: https://bizflow-gray.vercel.app
+Live: https://kudi-biz.vercel.app/
 
 **Try it without signing up:** click **Try the live demo** for a private account with 6 months of sample data.
 
