@@ -4,6 +4,7 @@ import { useActionState, useState } from "react";
 import { Loader2, MailCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Field, Input } from "@/components/ui/input";
+import { PasswordInput } from "@/components/ui/password-input";
 import { signIn, signUp, type AuthState } from "@/lib/actions/auth";
 import { cn } from "@/lib/utils";
 
@@ -70,10 +71,9 @@ export function AuthForm({ next, linkError }: { next?: string; linkError?: boole
           />
         </Field>
         <Field label="Password" htmlFor="password" hint={mode === "signup" ? "At least 8 characters." : undefined}>
-          <Input
+          <PasswordInput
             id="password"
             name="password"
-            type="password"
             autoComplete={mode === "signin" ? "current-password" : "new-password"}
             minLength={8}
             required

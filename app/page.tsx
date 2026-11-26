@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, CalendarRange, Gauge, ShieldCheck, TrendingUp } from "lucide-react";
+import { ArrowRight, CalendarRange, Gauge, Globe, Mail, Phone, ShieldCheck, TrendingUp } from "lucide-react";
 import { Logo, seriesColor } from "@/components/brand";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { DemoButton } from "@/components/demo-button";
@@ -134,8 +134,38 @@ export default async function Home() {
         </section>
       </main>
 
-      <footer className="mx-auto max-w-6xl px-4 py-8 text-[13px] text-ink-3 sm:px-6">
-        Built with Next.js, Supabase and Tailwind CSS.
+      <footer className="mx-auto max-w-6xl border-t border-line px-4 py-8 text-[15px] font-semibold text-ink-2 sm:px-6">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} Kudi. By Rahmat Anoba.</p>
+          <ul className="flex flex-col gap-2 sm:flex-row sm:gap-6">
+            <li>
+              <a href="tel:+2348130297049" className="inline-flex items-center gap-2 transition-colors hover:text-ink">
+                <Phone className="size-4 text-brand" />
+                +234 813 0297 049
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:rahmatanoba1@gmail.com"
+                className="inline-flex items-center gap-2 transition-colors hover:text-ink"
+              >
+                <Mail className="size-4 text-brand" />
+                rahmatanoba1@gmail.com
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://anoba-rahmat.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 transition-colors hover:text-ink"
+              >
+                <Globe className="size-4 text-brand" />
+                Portfolio
+              </a>
+            </li>
+          </ul>
+        </div>
       </footer>
     </div>
   );
