@@ -53,7 +53,11 @@ supabase/migrations/       schema, RLS policies, triggers, SQL functions
 
 ## Running locally
 
-1. Create a Supabase project and copy `.env.example` to `.env.local` with your URL and anon key.
+1. Create a Supabase project, then create `.env.local` with your project URL and anon key:
+   ```
+   NEXT_PUBLIC_SUPABASE_URL=https://your-project-ref.supabase.co
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+   ```
 2. Apply the schema, either with
    `npx supabase link --project-ref <ref> && npx supabase db push`
    or by pasting `supabase/migrations/*.sql` into the Supabase SQL editor.
